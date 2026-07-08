@@ -1,1 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "gallery"
+    label: "Gallery Photos"
+    folder: "_gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Photo Title", name: "title", widget: "string"}
+      - {label: "Photo", name: "image", widget: "image"}
+      - {label: "Caption", name: "caption", widget: "string", required: false}
+
+  - name: "reviews"
+    label: "Parent Reviews"
+    folder: "_reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Parent Name", name: "name", widget: "string"}
+      - {label: "Review Text", name: "review", widget: "text"}
+      - {label: "Date", name: "date", widget: "string"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General"
+        name: "general"
+        file: "_data/settings.json"
+        fields:
+          - {label: "School Phone", name: "phone", widget: "string"}
+          - {label: "WhatsApp Number (with country code, no +)", name: "whatsapp", widget: "string"}
+          - {label: "Address", name: "address", widget: "text"}
+          - {label: "Happy Families Count", name: "stat_families", widget: "string"}
+          - {label: "Years Running", name: "stat_years", widget: "string"}
+          - {label: "Google Rating", name: "stat_rating", widget: "string"}
