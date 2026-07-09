@@ -1,5 +1,5 @@
 ---
 title: Independance day
-image: /images/uploads/cristiano_ronaldo_2275_-cropped-.jpg.webp
+image: /images/uploads/independence_day.jpg
 caption: Indepandance celebration
 ---
